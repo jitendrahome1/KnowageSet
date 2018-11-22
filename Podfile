@@ -7,14 +7,6 @@ target 'KnowageSet' do
 
   # Pods for KnowageSet
 
-  target 'KnowageSetTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'KnowageSetUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+pod 'Alamofire'
+pod 'SwiftyJSON'
 end
