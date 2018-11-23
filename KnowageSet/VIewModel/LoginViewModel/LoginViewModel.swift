@@ -13,28 +13,30 @@ protocol LoginViewModelDelagte {
     
     func getSuccessOTP(isSuccess:Bool)
     func verfiyOTP(isSuccess:Bool)
+    func finishOTPTimer()
 }
+
+
 class LoginViewModel:NSObject {
     var delegate: LoginViewModelDelagte!
-    let obj: OTPDetails
-    override init() {
-        self.obj = OTPDetails()
-    }
+    private var lblTimer = UILabel()
+    private var objOtp: OTPFeed!
+    var countdownTimer: Timer!
+    var totalTime = 30
+    
     func getOTP(mNumber:String){
-        
         APICall.share.requestOTPAuthentication(mobileNumber: mNumber) { (response) in
             let feedData:String =  (response.Status! == "Success") ?  response.Details! : ""
             if !(feedData.isEmpty) {
+             self.objOtp = response
                 self.delegate.getSuccessOTP(isSuccess: true)
-               }
+            }
             
         }
        
     }
     func verifyOTP(otp:String) {
-        
-        print(obj.Details)
-        APICall.share.requestOTPAuthenticationVerify(otp: otp, sessionID: obj.Details!, requestFor: .requestVerifyOTP) { (response) in
+        APICall.share.requestOTPAuthenticationVerify(otp: otp, sessionID: self.objOtp.Details!, requestFor: .requestVerifyOTP) { (response) in
             let feedData:String =  (response.Status! == "Success") ?  response.Details! : ""
             if !(feedData.isEmpty) {
                 self.delegate.verfiyOTP(isSuccess: true)
@@ -42,5 +44,36 @@ class LoginViewModel:NSObject {
         }
         
     }
-    
+    func startOtpTimer(label:UILabel, timeLimit:Int) {
+        self.totalTime = timeLimit
+        self.lblTimer = label
+        self.lblTimer.isHidden =  false
+         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
+    @objc func updateTime() {
+        self.lblTimer.text = "\(timeFormatted(totalTime))"
+        if totalTime != 0 {
+            totalTime -= 1
+        } else {
+            endTimer()
+        }
+    }
+
+    private func endTimer() {
+        self.lblTimer.isHidden = true
+        self.delegate.finishOTPTimer()
+        countdownTimer.invalidate()
+    }
+
+    private func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+    func swichRootViewController() {
+        let rootController =  dashboardStoryboard.instantiateViewController(withIdentifier: "MainNavigation") as! UINavigationController
+        NavigationHelper.helper.navController = rootController
+        UIApplication.shared.windows.first!.rootViewController =  rootController
+    }
 }
+

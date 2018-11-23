@@ -17,7 +17,7 @@ enum OTPAuthenticationCategory:Int {
         return self.rawValue
     }
 }
-struct OTPDetails:Decodable {
+struct OTPFeed:Decodable {
     
     var mobileNumber: String?
     var otpValue:String?
@@ -25,23 +25,19 @@ struct OTPDetails:Decodable {
     var Status: String?
     
     enum codingKey:String, CodingKey{
-        case sessionID = "Details"
+        case details = "Details"
+        case mobileNumber
+        case otpValue
+        case status = "Status"
     }
-    
+
     
     static func getOTP(mobileNumber:String)-> String {
-        return "" //"https://2factor.in/API/V1/\(OTP2FACTORAPIKEY)/SMS/+91\(mobileNumber)/AUTOGEN"
+        return "https://2factor.in/API/V1/\(OTP2FACTORAPIKEY)/SMS/+91\(mobileNumber)/AUTOGEN-343434"
     }
     static func varifyOTP(sessionID:String,OTP:String)-> String {
-        return  ""//"https://2factor.in/API/V1/\(OTP2FACTORAPIKEY)/SMS/VERIFY/\(sessionID)/\(OTP)"
+        return  "https://2factor.in/API/V1/\(OTP2FACTORAPIKEY)/SMS/VERIFY/\(sessionID)/\(OTP)"
         
     }
-   
-    
-}
 
-class UserModel: NSObject {
-    
-    
 }
-

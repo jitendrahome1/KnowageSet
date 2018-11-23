@@ -9,6 +9,7 @@
 import UIKit
 import SendOTPFramework
 class LoginVC: BaseViewController,OTPVerifyProtocol, LoginViewModelDelagte, UITextFieldDelegate {
+    @IBOutlet weak var lblCountDown: UILabel!
     @IBOutlet weak var lblRegisterTitle: UILabel!
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var viewMobileNumber: UIView!
@@ -22,6 +23,7 @@ class LoginVC: BaseViewController,OTPVerifyProtocol, LoginViewModelDelagte, UITe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         model.delegate = self
         lblRegisterTitle.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
         initialSetup()
@@ -67,18 +69,22 @@ extension LoginVC {
     // MRAK:- ACTION
     @objc func doneButtonAction()
     {
-        guard (self.textMobileNumber.hasText) && !((self.textMobileNumber.text?.count)! < 10)else {
-            if ((self.textMobileNumber.text?.isEmpty)!) {
-                showAlert(title:ALERT_TITLE, message: ALERT_BLANK_MOBILE)
-                return
-            }
-            if (self.textMobileNumber.text?.count)! < 10 {
-                showAlert(title:ALERT_TITLE, message: ALERT_LIMIT)
-                return
-            }
-            return
-        }
-        self.model.getOTP(mNumber: self.textMobileNumber.text!)
+        self.model.swichRootViewController()
+        
+        
+//        self.view.endEditing(true)
+//        guard (self.textMobileNumber.hasText) && !((self.textMobileNumber.text?.count)! < 10)else {
+//            if ((self.textMobileNumber.text?.isEmpty)!) {
+//                showAlert(title:ALERT_TITLE, message: ALERT_BLANK_MOBILE)
+//                return
+//            }
+//            if (self.textMobileNumber.text?.count)! < 10 {
+//                showAlert(title:ALERT_TITLE, message: ALERT_LIMIT)
+//                return
+//            }
+//            return
+//        }
+//        self.model.getOTP(mNumber: self.textMobileNumber.text!)
     }
     
     
@@ -87,22 +93,22 @@ extension LoginVC {
 extension LoginVC {
     func getSuccessOTP(isSuccess: Bool) {
         if (isSuccess) {
+            self.model.startOtpTimer(label: self.lblCountDown,timeLimit:30)
             DispatchQueue.main.async {
                 self.viewOtp.alpha = 0.0
                 self.textMobileNumber.isEnabled = false
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.heightConst.constant = 96.0
-                    self.viewOtp.alpha = 1.0
-                    self.view.layoutIfNeeded()
-                }, completion: { (true) in
-                    self.textOtp.inputAccessoryView = nil
-                    self.view.endEditing(true)
-                })
-            }
+                self.viewOtp.alpha = 1.0
+                self.textOtp.inputAccessoryView = nil
+                }
         }
     }
     func verfiyOTP(isSuccess: Bool) {
         print(isSuccess)
+    }
+    func finishOTPTimer() {
+        self.textMobileNumber.isEnabled = true
+        self.viewOtp.alpha = 0.0
+      
     }
     
 }

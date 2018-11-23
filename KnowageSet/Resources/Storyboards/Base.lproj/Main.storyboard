@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4S3-yH-I80">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -43,6 +43,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DhY-fW-kX3">
                                                 <rect key="frame" x="5" y="2" width="202" height="32"/>
                                                 <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
@@ -162,6 +163,16 @@
                                     <constraint firstItem="HGD-t1-tEN" firstAttribute="top" secondItem="T5f-Ce-rGv" secondAttribute="top" id="xOM-tT-iOI"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDA-4U-Ect">
+                                <rect key="frame" x="143" y="226" width="89" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="41H-Be-Ry9"/>
+                                    <constraint firstAttribute="width" constant="89" id="ukL-gI-y8e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.86690414507772018" green="0.24043086748363618" blue="0.16803068084620124" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -172,20 +183,24 @@
                             <constraint firstItem="SRa-9m-wY5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I4h-hZ-xd5"/>
                             <constraint firstItem="vxT-q0-a55" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="Qz2-Vh-b9Q"/>
                             <constraint firstItem="vxT-q0-a55" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T8k-D4-Itc"/>
+                            <constraint firstItem="hDA-4U-Ect" firstAttribute="top" secondItem="B5m-5n-Izc" secondAttribute="bottom" constant="3" id="UWF-VM-b28"/>
+                            <constraint firstItem="hDA-4U-Ect" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WVc-4j-W41"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B5m-5n-Izc" secondAttribute="trailing" constant="10" id="Z3h-lb-tQ3"/>
                             <constraint firstItem="T5f-Ce-rGv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZQK-Ie-c0b"/>
+                            <constraint firstItem="SRa-9m-wY5" firstAttribute="top" secondItem="hDA-4U-Ect" secondAttribute="bottom" constant="2" id="aJC-1g-Vnx"/>
                             <constraint firstItem="T5f-Ce-rGv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="b1x-kd-BQO"/>
                             <constraint firstItem="T5f-Ce-rGv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="l9N-bI-2cV"/>
-                            <constraint firstItem="SRa-9m-wY5" firstAttribute="top" secondItem="B5m-5n-Izc" secondAttribute="bottom" constant="25" id="ml5-Ji-aK7"/>
                             <constraint firstItem="pA8-e1-gcG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qFJ-7d-DaK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pA8-e1-gcG" secondAttribute="bottom" constant="20" id="siK-TQ-Z0F"/>
                             <constraint firstItem="B5m-5n-Izc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="yqT-Uf-Byn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="u1U-BR-0Xh"/>
                     <connections>
                         <outlet property="btnRegister" destination="HGD-t1-tEN" id="Nbr-l4-yyf"/>
                         <outlet property="heightConst" destination="Lx2-sk-Sk3" id="LLb-qL-an7"/>
+                        <outlet property="lblCountDown" destination="hDA-4U-Ect" id="8W3-Kn-xq0"/>
                         <outlet property="lblRegisterTitle" destination="TC4-Mz-2xY" id="nlj-Dt-lvk"/>
                         <outlet property="lblTitle" destination="vxT-q0-a55" id="yj0-ql-DWp"/>
                         <outlet property="textMobileNumber" destination="DhY-fW-kX3" id="2gc-nP-5dP"/>
@@ -197,7 +212,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-492" y="-46"/>
+            <point key="canvasLocation" x="201" y="-62"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ua6-X0-wZX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4S3-yH-I80" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5IE-w3-uQP">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Cmr-X1-Cx1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="if0-QH-hXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-492" y="-46.326836581709152"/>
         </scene>
     </scenes>
     <resources>

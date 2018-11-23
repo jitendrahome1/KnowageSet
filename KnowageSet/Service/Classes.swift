@@ -19,17 +19,26 @@ class APICall {
 
    // sent OPT
     
-    func requestOTPAuthentication(mobileNumber:String, success:@escaping (_ success:OTPDetails)->()) {
-            if var urlComponents = URLComponents(string:OTPDetails.getOTP(mobileNumber: mobileNumber)) {
+    func requestOTPAuthentication(mobileNumber:String, success:@escaping (_ success:OTPFeed)->()) {
+            Loader.share.showLoader()
+            if var urlComponents = URLComponents(string:OTPFeed.getOTP(mobileNumber: mobileNumber)) {
+             
                 guard let url = urlComponents.url else { return }
                 dataTask = defaultSession.dataTask(with:url) { data, response, error in
-                    defer { self.dataTask = nil }
+                    defer {
+                         Loader.share.hideLoader()
+                        self.dataTask = nil
+
+                    }
                     guard let data =  data else{return}
                     do {
-                        let json =  try JSONDecoder().decode(OTPDetails.self, from: data)
-                        success(json)
+                        let json =  try JSONDecoder().decode(OTPFeed.self, from: data)
+
+                            Loader.share.hideLoader()
+                            success(json)
                     }
                     catch {
+                        Loader.share.hideLoader()
                         print(error)
                     }
                 }
@@ -39,14 +48,18 @@ class APICall {
    
     
     
-    func requestOTPAuthenticationVerify(otp:String,sessionID:String, requestFor:OTPAuthenticationCategory,success:@escaping (_ success:OTPDetails)->()) {
-        if var urlComponents = URLComponents(string:OTPDetails.varifyOTP(sessionID: sessionID, OTP: otp)) {
+    func requestOTPAuthenticationVerify(otp:String,sessionID:String, requestFor:OTPAuthenticationCategory,success:@escaping (_ success:OTPFeed)->()) {
+        if var urlComponents = URLComponents(string:OTPFeed.varifyOTP(sessionID: sessionID, OTP: otp)) {
             guard let url = urlComponents.url else { return }
             dataTask = defaultSession.dataTask(with:url) { data, response, error in
-                defer { self.dataTask = nil }
+                defer {
+                   
+                    self.dataTask = nil
+                    
+                }
                 guard let data =  data else{return}
                 do {
-                    let json =  try JSONDecoder().decode(OTPDetails.self, from: data)
+                    let json =  try JSONDecoder().decode(OTPFeed.self, from: data)
                     success(json)
                 }
                 catch {

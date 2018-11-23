@@ -25,13 +25,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KnowageSet/Controller/Login/LoginVC.swift"
-            timestampString = "564589890.318707"
+            filePath = "KnowageSet/Model/OTP/OTPModel.swift"
+            timestampString = "564676887.314272"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "textFieldShouldReturn(_:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "varifyOTP(sessionID:OTP:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KnowageSet/Controller/Login/LoginVC.swift"
+            timestampString = "564676887.314358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "finishOTPTimer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KnowageSet/VIewModel/LoginViewModel/LoginViewModel.swift"
+            timestampString = "564676887.314443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "endTimer()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,46 +73,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KnowageSet/VIewModel/LoginViewModel/LoginViewModel.swift"
-            timestampString = "564589890.3188111"
+            filePath = "KnowageSet/Controller/Home/HomeVC.swift"
+            timestampString = "564676887.314521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "verifyOTP(otp:)"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KnowageSet.LoginViewModel.verifyOTP(otp: Swift.String) -&gt; ()"
-                  moduleName = "KnowageSet"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jitendrakumar_a/Desktop/JitendraWorkspace/MyApp/KnowageSet/KnowageSet/KnowageSet/VIewModel/LoginViewModel/LoginViewModel.swift"
-                  timestampString = "564589890.610018"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "252">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (KnowageSet.OTPDetails) -&gt; () in KnowageSet.LoginViewModel.verifyOTP(otp: Swift.String) -&gt; ()"
-                  moduleName = "KnowageSet"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jitendrakumar_a/Desktop/JitendraWorkspace/MyApp/KnowageSet/KnowageSet/KnowageSet/VIewModel/LoginViewModel/LoginViewModel.swift"
-                  timestampString = "564589890.612673"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

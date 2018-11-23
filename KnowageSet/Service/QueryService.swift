@@ -14,9 +14,9 @@ class QueryService {
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     var errorMessage = ""
-    func requestOTPAuthentication(mNumber mobileNumber:String, requestFor:OTPAuthenticationCategory, success:@escaping (_ response:OTPDetails)->()) {
+    func requestOTPAuthentication(mNumber mobileNumber:String, requestFor:OTPAuthenticationCategory, success:@escaping (_ response:OTPFeed)->()) {
         if requestFor.rawValue == OTPAuthenticationCategory.requestOTP.rawValue {
-            if var urlComponents = URLComponents(string:OTPDetails.getOTP(mobileNumber: mobileNumber)) {
+            if var urlComponents = URLComponents(string:OTPFeed.getOTP(mobileNumber: mobileNumber)) {
                 
                 guard let url = urlComponents.url else { return }
                 
@@ -26,7 +26,7 @@ class QueryService {
                     guard let data =  data else{return}
                     
                     do {
-                       let json =  try JSONDecoder().decode(OTPDetails.self, from: data)
+                       let json =  try JSONDecoder().decode(OTPFeed.self, from: data)
                         success(json)
                     }
                     catch {
