@@ -10,21 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--DashboardVC-->
-        <scene sceneID="D4b-ty-ybg">
-            <objects>
-                <tabBarController storyboardIdentifier="DashboardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NCc-Eh-4JY" customClass="DashboardVC" customModule="KnowageSet" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="R8C-Pu-0ba"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zkt-ux-YeK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NSR-By-csv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2956" y="-1630"/>
-        </scene>
         <!--HomeVC-->
         <scene sceneID="iRf-uK-VK2">
             <objects>
@@ -32,13 +17,42 @@
                     <view key="view" contentMode="scaleToFill" id="mfX-dh-okL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.03983218451" green="0.76395326549999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MsZ-VW-GKB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T1i-TA-356" customClass="JAPageControl" customModule="KnowageSet" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="64" width="359" height="184"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="184" id="qUn-Fe-JHs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="T1i-TA-356" firstAttribute="top" secondItem="MsZ-VW-GKB" secondAttribute="top" constant="64" id="XZe-PY-czo"/>
+                                    <constraint firstAttribute="trailing" secondItem="T1i-TA-356" secondAttribute="trailing" constant="8" id="nvh-bK-zdI"/>
+                                    <constraint firstItem="T1i-TA-356" firstAttribute="leading" secondItem="MsZ-VW-GKB" secondAttribute="leading" constant="8" id="w8V-x6-0zU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MsZ-VW-GKB" firstAttribute="top" secondItem="mfX-dh-okL" secondAttribute="top" id="LfK-PZ-CaY"/>
+                            <constraint firstItem="MsZ-VW-GKB" firstAttribute="bottom" secondItem="7fo-sp-9tc" secondAttribute="bottom" id="Ucv-fB-qxx"/>
+                            <constraint firstItem="MsZ-VW-GKB" firstAttribute="trailing" secondItem="7fo-sp-9tc" secondAttribute="trailing" id="XPI-Bx-qYW"/>
+                            <constraint firstItem="MsZ-VW-GKB" firstAttribute="leading" secondItem="7fo-sp-9tc" secondAttribute="leading" id="cgG-hB-1t4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7fo-sp-9tc"/>
                     </view>
+                    <connections>
+                        <outlet property="pagerView" destination="T1i-TA-356" id="OGA-Ex-nPC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpn-an-bch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2294" y="-2282"/>
+            <point key="canvasLocation" x="-3175.1999999999998" y="-2287.1064467766118"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rbm-J4-xGV">
@@ -49,9 +63,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="NCc-Eh-4JY" kind="relationship" relationship="rootViewController" id="p0b-ND-22s"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uV-Za-LzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

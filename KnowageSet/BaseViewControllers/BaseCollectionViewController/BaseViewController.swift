@@ -12,13 +12,16 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+     
         // Do any additional setup after loading the view.
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
+    func initialSetup() {
+        // do something.
+    }
     
      func showAlert(title:String, message:String) {
         let alert = UIAlertController(title:title, message: message, preferredStyle: .alert)

@@ -10,21 +10,22 @@ import UIKit
 
 class HomeVC: BaseViewController {
 
+    //@IBOutlet var aView: JAPageControl!
+    
+    @IBOutlet var pagerView: JAPageControl!
+    
+    let imagesData = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg"]
     override func viewDidLoad() {
         super.viewDidLoad()
+       self.view.backgroundColor = UIColor.blue
+        
     
-        // Do any additional setup after loading the view.
+       // self.pagerView = JAPageControl(frame: CGRect(x: 100, y: 200, width: 100, height: 100),imageItems: [UIImage(named: "image1.jpg")!])
+     //  aView =  JAPageControl(frame: CGRect(x: 100, y: 100, width: 100, height: 150))
+     
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
+    
 }

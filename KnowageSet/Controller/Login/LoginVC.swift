@@ -23,10 +23,9 @@ class LoginVC: BaseViewController,OTPVerifyProtocol, LoginViewModelDelagte, UITe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         model.delegate = self
         lblRegisterTitle.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
-        initialSetup()
+        self.initialSetup()
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -39,14 +38,16 @@ class LoginVC: BaseViewController,OTPVerifyProtocol, LoginViewModelDelagte, UITe
     @IBAction func actionRegister(_ sender: UIButton) {
         didOTPVerify()
     }
+    
+    override func initialSetup() {
+        self.addDoneButtonOnKeyboard()
+    }
   }
 // Mark: - Add done buton in keybord
 extension LoginVC {
     
     // Insitial setup
-    fileprivate func initialSetup() {
-        self.addDoneButtonOnKeyboard()
-    }
+   
     fileprivate func showAnimation() {
         UIView.animate(withDuration: 1.0, animations: {
             self.lblTitle.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
@@ -69,7 +70,7 @@ extension LoginVC {
     // MRAK:- ACTION
     @objc func doneButtonAction()
     {
-        self.model.swichRootViewController()
+        self.model.switchDashboardController()
         
         
 //        self.view.endEditing(true)

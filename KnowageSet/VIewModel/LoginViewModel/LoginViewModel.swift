@@ -70,10 +70,12 @@ class LoginViewModel:NSObject {
         let minutes: Int = (totalSeconds / 60) % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
-    func swichRootViewController() {
-        let rootController =  dashboardStoryboard.instantiateViewController(withIdentifier: "MainNavigation") as! UINavigationController
-        NavigationHelper.helper.navController = rootController
+    
+    func switchDashboardController() {
+        let rootController =  CustomTabbarController()
+        //NavigationHelper.helper.navController = UINavigationController(rootViewController: rootController)
         UIApplication.shared.windows.first!.rootViewController =  rootController
     }
+    
 }
 
