@@ -10,7 +10,10 @@ import UIKit
 
 class BaseCollectionViewCell: UICollectionViewCell {
  
-        var datasource: AnyObject?
+    override func awakeFromNib() {
+        self.backgroundColor = .clear
+    }
+    var datasource: AnyObject?
     
     
 }

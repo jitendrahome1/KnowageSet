@@ -8,24 +8,38 @@
 
 import UIKit
 
-class HomeVC: BaseViewController {
+class HomeVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+  
 
     //@IBOutlet var aView: JAPageControl!
+    private let cellIdentifier = "SliderCell"
+    @IBOutlet var tblHome: UITableView!
     
-    @IBOutlet var pagerView: JAPageControl!
-    
-    let imagesData = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg"]
     override func viewDidLoad() {
         super.viewDidLoad()
-       self.view.backgroundColor = UIColor.blue
-        
+        self.view.backgroundColor = UIColor.blue
+       // self.title = "Home"
+         //NavigationHelper.helper.navController.title = "home"
+    }
+    override func initialSetup() {
+        self.setTitle(title: "Home")
+        //NavigationHelper.helper.navController.title = "home"
+    }
+  
     
-       // self.pagerView = JAPageControl(frame: CGRect(x: 100, y: 200, width: 100, height: 100),imageItems: [UIImage(named: "image1.jpg")!])
-     //  aView =  JAPageControl(frame: CGRect(x: 100, y: 100, width: 100, height: 150))
-     
-        
+}
+// MARK:- Table view Delegate and Datascource
+extension HomeVC {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return 1
     }
     
-  
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! SliderCell
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 202
+    }
     
 }

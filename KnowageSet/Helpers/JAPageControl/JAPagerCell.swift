@@ -11,13 +11,20 @@ import UIKit
 class JAPagerCell: BaseCollectionViewCell {
     
     
+    @IBOutlet var imgView: UIImageView!
+    
     override var datasource: AnyObject? {
         didSet {
             
-            guard let dataSource =  datasource else {
+            guard datasource != nil else {
                 return
             }
-            //  do something.
+          
+                let img = self.datasource as! UIImage
+                self.imgView.image  =  img
+            
+          
+            
             
         }
     }

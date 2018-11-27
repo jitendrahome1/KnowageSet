@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1284F71478F0DC58CD7F93A9 /* Pods_KnowageSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809857BBF0B8CC65C694B86B /* Pods_KnowageSet.framework */; };
+		4351D84021AD8613004D5AF9 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351D83F21AD8613004D5AF9 /* SliderCell.swift */; };
+		4359497521AD1A2C0066AE29 /* UIView+knowageSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359497421AD1A2C0066AE29 /* UIView+knowageSet.swift */; };
 		4362534B21A53836006C136F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362534A21A53836006C136F /* AppDelegate.swift */; };
 		4362535021A53836006C136F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4362534E21A53836006C136F /* Main.storyboard */; };
 		4362535221A5383E006C136F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4362535121A5383E006C136F /* Assets.xcassets */; };
@@ -99,6 +101,8 @@
 
 /* Begin PBXFileReference section */
 		2FFE488F95A49D35B733864D /* Pods-KnowageSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowageSet.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnowageSet/Pods-KnowageSet.release.xcconfig"; sourceTree = "<group>"; };
+		4351D83F21AD8613004D5AF9 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
+		4359497421AD1A2C0066AE29 /* UIView+knowageSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+knowageSet.swift"; sourceTree = "<group>"; };
 		4362534721A53836006C136F /* KnowageSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnowageSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362534A21A53836006C136F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4362534F21A53836006C136F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -193,6 +197,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4351D83E21AD85CD004D5AF9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4351D83F21AD8613004D5AF9 /* SliderCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		4362533E21A53836006C136F = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +398,7 @@
 				43DDB00821A83507009489AB /* Color+Knowage.swift */,
 				43C1F90A21AC0FF7004956BB /* UIViewController+KnowageSet.swift */,
 				43C1F90C21AC1467004956BB /* UIStoryboard+KnowageSet.swift */,
+				4359497421AD1A2C0066AE29 /* UIView+knowageSet.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -592,6 +605,7 @@
 		43DDB01421A8437C009489AB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4351D83E21AD85CD004D5AF9 /* Cell */,
 				43DDB01D21A84446009489AB /* HomeVC.swift */,
 			);
 			path = Home;
@@ -818,6 +832,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4359497521AD1A2C0066AE29 /* UIView+knowageSet.swift in Sources */,
+				4351D84021AD8613004D5AF9 /* SliderCell.swift in Sources */,
 				4362534B21A53836006C136F /* AppDelegate.swift in Sources */,
 				43DDB01621A84408009489AB /* AccountVC.swift in Sources */,
 				43FC0FD321A5809F00C2D136 /* UITextField+KnowageSet.swift in Sources */,
