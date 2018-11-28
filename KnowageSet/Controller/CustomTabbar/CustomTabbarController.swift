@@ -36,20 +36,23 @@ class CustomTabbarController : UITabBarController {
         self.loadTabbarViewController()
         
     }
-    private func loadTabbarViewController() {
-        
+   private func loadTabbarViewController() {
+        var navigationController:UINavigationController!
         var tempController:[UIViewController] = []
         for (idx,_) in arrController.enumerated() {
             let cont = dashboardStoryboard.instantiate(identifier: String(describing: arrController[idx]), asClass:arrController[idx])
             let utiltiy =  TabBarUtility(title: arrTabbarTitle[idx], image: arrTabbarImage[idx], controller:cont)
             let vc = utiltiy.controller
-            let navigationController = UINavigationController(rootViewController: vc)
+            navigationController = UINavigationController(rootViewController: vc)
             navigationController.title = utiltiy.title
             navigationController.tabBarItem.image = utiltiy.image
             tempController.append(navigationController)
             }
-        viewControllers = tempController
+           // NavigationHelper.helper.navController = navigationController
+            viewControllers = tempController
+    
         
     }
+  
 }
 

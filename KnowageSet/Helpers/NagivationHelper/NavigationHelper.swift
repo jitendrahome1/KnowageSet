@@ -12,6 +12,7 @@ class NavigationHelper: NSObject {
     
     static let helper = NavigationHelper()
     var navController: UINavigationController!
+    
     //Initializer access level change now
     fileprivate override init() {
     }
@@ -20,5 +21,6 @@ class NavigationHelper: NSObject {
         navController.popViewController(animated: true)
     }
     
+
     
 }

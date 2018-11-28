@@ -26,33 +26,7 @@
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DXz-UF-cL8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SliderCell" rowHeight="202" id="TQV-ur-xIy" customClass="SliderCell" customModule="KnowageSet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="202"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TQV-ur-xIy" id="7RR-QN-lct">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="202"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jV9-3e-hNv" customClass="JAPageControl" customModule="KnowageSet" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="202"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </view>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="jV9-3e-hNv" firstAttribute="top" secondItem="7RR-QN-lct" secondAttribute="top" id="Abr-HN-T9v"/>
-                                                        <constraint firstAttribute="bottom" secondItem="jV9-3e-hNv" secondAttribute="bottom" id="I8S-nS-ahR"/>
-                                                        <constraint firstItem="jV9-3e-hNv" firstAttribute="leading" secondItem="7RR-QN-lct" secondAttribute="leading" id="UPj-dr-kpE"/>
-                                                        <constraint firstAttribute="trailing" secondItem="jV9-3e-hNv" secondAttribute="trailing" id="boz-nR-gcd"/>
-                                                    </constraints>
-                                                </tableViewCellContentView>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <outlet property="pageControlView" destination="jV9-3e-hNv" id="kIV-K7-ym2"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <connections>
                                             <outlet property="dataSource" destination="RGz-bO-8yg" id="S8T-4R-91e"/>
                                             <outlet property="delegate" destination="RGz-bO-8yg" id="poY-vs-U9v"/>

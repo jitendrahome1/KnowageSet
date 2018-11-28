@@ -16,6 +16,7 @@ class JAPageControl: UIView , UICollectionViewDelegate, UICollectionViewDataSour
     private var dataItems:[AnyObject] = []
     private var currentPage:Int = 0
     var timerValue:CGFloat = 2.5
+    
     override func awakeFromNib() {
         self.backgroundColor =  UIColor.clear
     }

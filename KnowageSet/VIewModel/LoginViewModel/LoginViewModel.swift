@@ -73,9 +73,9 @@ class LoginViewModel:NSObject {
     
     func switchDashboardController() {
         let rootController =  CustomTabbarController()
-      NavigationHelper.helper.navController = (dashboardStoryboard.instantiateViewController(withIdentifier: "MainNavigation") as! UINavigationController)
-        NavigationHelper.helper.navController.viewControllers = [rootController]
-        UIApplication.shared.windows.first!.rootViewController =   NavigationHelper.helper.navController
+   NavigationHelper.helper.navController = (dashboardStoryboard.instantiateViewController(withIdentifier: "MainNavigation") as! UINavigationController)
+     //   NavigationHelper.helper.navController.viewControllers = [rootController]
+        UIApplication.shared.windows.first!.rootViewController =  rootController //NavigationHelper.helper.navController
     }
     
 }

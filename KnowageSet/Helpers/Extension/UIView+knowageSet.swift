@@ -11,17 +11,24 @@ import UIKit
 
 public extension UIView {
     
-//    class func fromNib<T: UIView>() -> T {
-//        return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
-//    }
-//    
+    static func instantiateFromNib() -> Self? {
+            
+            func instanceFromNib<T: UIView>() -> T? {
+                
+                return UINib(nibName: "\(self)", bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
+            }
+            
+            return instanceFromNib()
+        }
+    
+    
 //    class func loadFromNibNamed(nibNamed: String, bundle: Bundle? = nil) -> UIView? {
 //        return UINib(
 //            nibName: nibNamed,
 //            bundle: bundle
 //            ).instantiate(withOwner: nil, options: nil)[0] as? UIView
 //    }
-//    
+    
     
 }
 

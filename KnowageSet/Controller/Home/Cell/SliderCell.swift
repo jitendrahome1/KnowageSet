@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SliderCell: BaseTableViewCell {
+class SliderCell: BaseTableViewCell{
 
     @IBOutlet var pageControlView: JAPageControl!
   //  private let imagesData = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg"]

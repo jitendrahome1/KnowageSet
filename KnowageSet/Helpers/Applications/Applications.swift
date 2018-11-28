@@ -14,3 +14,7 @@ let ALERT_LIMIT = "Enter mobile 10 digit mobile number"
 let ALERT_OTP = "Enter OTP"
 
 
+// MRAK:- NAVIGATION TITLE
+let HOMEVC_TITLE = "Home"
+
+

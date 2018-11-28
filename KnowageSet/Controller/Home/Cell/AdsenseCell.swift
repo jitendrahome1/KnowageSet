@@ -1,15 +1,17 @@
 //
-//  BaseTableViewCell.swift
+//  AdsenseCell.swift
 //  KnowageSet
 //
-//  Created by Jitendra Kumar Agarwal on 23/11/18.
+//  Created by Jitendra Kumar Agarwal on 28/11/18.
 //  Copyright © 2018 Jitendra Kumar Agarwal. All rights reserved.
 //
 
 import UIKit
 
-class BaseTableViewCell: UITableViewCell,ReusableView, NibLoadableView   {
+class AdsenseCell: BaseTableViewCell {
 
+    @IBOutlet var imgBanner: UIImageView!
+    @IBOutlet var viewBG: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
