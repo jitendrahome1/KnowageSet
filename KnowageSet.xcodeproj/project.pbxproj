@@ -71,6 +71,8 @@
 		43E09F5121AEA3E500321C75 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E09F5021AEA3E500321C75 /* HomeViewModel.swift */; };
 		43E09F5721AEB22A00321C75 /* HomeSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E09F5621AEB22A00321C75 /* HomeSectionHeader.xib */; };
 		43E09F5921AEB23F00321C75 /* HeaderViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E09F5821AEB23F00321C75 /* HeaderViewHome.swift */; };
+		43E09F5B21AED42100321C75 /* TagsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E09F5A21AED42100321C75 /* TagsCell.xib */; };
+		43E09F5D21AED48900321C75 /* TagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E09F5C21AED48900321C75 /* TagsCell.swift */; };
 		43FC0FD321A5809F00C2D136 /* UITextField+KnowageSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FC0FD221A5809F00C2D136 /* UITextField+KnowageSet.swift */; };
 		43FC0FD521A58D7900C2D136 /* SendOTPFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FC0FD421A58D7900C2D136 /* SendOTPFramework.framework */; };
 		43FC0FD721A58DA500C2D136 /* SendOTPFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43FC0FD421A58D7900C2D136 /* SendOTPFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -179,6 +181,8 @@
 		43E09F5021AEA3E500321C75 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		43E09F5621AEB22A00321C75 /* HomeSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSectionHeader.xib; sourceTree = "<group>"; };
 		43E09F5821AEB23F00321C75 /* HeaderViewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewHome.swift; sourceTree = "<group>"; };
+		43E09F5A21AED42100321C75 /* TagsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsCell.xib; sourceTree = "<group>"; };
+		43E09F5C21AED48900321C75 /* TagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCell.swift; sourceTree = "<group>"; };
 		43FC0FD221A5809F00C2D136 /* UITextField+KnowageSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+KnowageSet.swift"; sourceTree = "<group>"; };
 		43FC0FD421A58D7900C2D136 /* SendOTPFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SendOTPFramework.framework; sourceTree = "<group>"; };
 		43FC0FDB21A59AE200C2D136 /* OtpVerifyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVerifyProtocol.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 			children = (
 				4351D83F21AD8613004D5AF9 /* SliderCell.swift */,
 				43E09F3D21AE778700321C75 /* AdsenseCell.swift */,
+				43E09F5C21AED48900321C75 /* TagsCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				43E09F4B21AEA21D00321C75 /* AdsenseCell.xib */,
 				43E09F5621AEB22A00321C75 /* HomeSectionHeader.xib */,
 				43E09F5821AEB23F00321C75 /* HeaderViewHome.swift */,
+				43E09F5A21AED42100321C75 /* TagsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -785,6 +791,7 @@
 				43C1F8FC21ABEEDB004956BB /* JAPagerCell.xib in Resources */,
 				4362535521A5383E006C136F /* LaunchScreen.storyboard in Resources */,
 				4362539B21A54154006C136F /* Gabriela-Regular.ttf in Resources */,
+				43E09F5B21AED42100321C75 /* TagsCell.xib in Resources */,
 				4362539321A53FE5006C136F /* Raven Script DEMO.ttf in Resources */,
 				4362539121A53F10006C136F /* burnstown dam.ttf in Resources */,
 				43C1F90421ABEFD7004956BB /* image1.jpg in Resources */,
@@ -828,6 +835,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RSLoadingView/RSLoadingView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -836,6 +844,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSLoadingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -884,6 +893,7 @@
 				43C1F8FA21ABE0FF004956BB /* JAPagerCell.swift in Sources */,
 				43E09F4421AE7AF900321C75 /* UICollectionView+KnowageSet.swift in Sources */,
 				43C1F8F321ABD181004956BB /* CustomTabbarController.swift in Sources */,
+				43E09F5D21AED48900321C75 /* TagsCell.swift in Sources */,
 				43DDAFF621A82D58009489AB /* UIController.swift in Sources */,
 				4362DD0F21A6D108002FEFC5 /* Applications.swift in Sources */,
 				4362DD0A21A6C7A9002FEFC5 /* String+KnowageSet.swift in Sources */,

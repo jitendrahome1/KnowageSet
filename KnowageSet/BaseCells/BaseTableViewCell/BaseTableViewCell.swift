@@ -9,7 +9,9 @@
 import UIKit
 
 class BaseTableViewCell: UITableViewCell,ReusableView, NibLoadableView   {
-
+    
+    var datasource: AnyObject?
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

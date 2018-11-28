@@ -2,23 +2,27 @@ PODS:
   - Alamofire (4.7.3)
   - RSLoadingView (1.1.3)
   - SwiftyJSON (4.2.0)
+  - TTGTagCollectionView (1.9.0)
 
 DEPENDENCIES:
   - Alamofire
   - RSLoadingView
   - SwiftyJSON
+  - TTGTagCollectionView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - RSLoadingView
     - SwiftyJSON
+    - TTGTagCollectionView
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   RSLoadingView: c7749afdd455229643e8f34277d0695973a15b1a
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  TTGTagCollectionView: 958f20b946dee92a8ba20dc37d10a06737641ae9
 
-PODFILE CHECKSUM: df35d05c3cf9571b735bb3e6b4374240565aae62
+PODFILE CHECKSUM: 4ab1e9a91a5074239dc9b516948c1f16adfe1b1d
 
 COCOAPODS: 1.5.3

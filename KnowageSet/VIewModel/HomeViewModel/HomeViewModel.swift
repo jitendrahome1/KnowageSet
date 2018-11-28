@@ -11,15 +11,18 @@ import UIKit
 
 class HomeViewModel {
     
-   
+    private let arrTagsItems: [String] = ["AutoLayout", "dynamically", "calculates", "the", "size", "and", "position",
+                                           "of", "all", "the", "views", "in", "your", "view", "hierarchy", "based",
+                                            "on", "constraints", "placed", "on", "those", "views"]
+ 
     var numberOfSection: Int {
         get {
-            return 2
+            return 3
         }
     }
     func heightForHeader(section:Int)->Int {
         switch section {
-        case 0:
+        case 0,1:
             return 0
         default:
             return 30
@@ -28,7 +31,7 @@ class HomeViewModel {
 
     func numberOfRowInSection(section:Int)->Int {
         switch section {
-        case 0,1:
+        case 0,1,2:
             return 1
         default:
             return 0
@@ -39,11 +42,19 @@ class HomeViewModel {
         switch section {
         case 0:
             return 202
-        case 1:
+        case 1,2:
             return 100
+        
             
         default:
             return 0
         }
     }
+    
+    var getAllTags: [String] {
+        get {
+            return self.arrTagsItems
+        }
+    }
+    
 }

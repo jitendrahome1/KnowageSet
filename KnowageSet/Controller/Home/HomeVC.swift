@@ -14,17 +14,17 @@ class HomeVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     private let model = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blue
         self.registerCustomCell()
     }
     override func initialSetup() {
+        self.tblHome.backgroundColor = .clear
         self.setTitle(title: HOMEVC_TITLE, BGColor: .black, tintColor: .white)
         
     }
     private func registerCustomCell() {
         self.tblHome.register(SliderCell.self)
         self.tblHome.register(AdsenseCell.self)
-        
+        self.tblHome.register(TagsCell.self)
     }
 }
 // MARK:- Table view Delegate and Datascource
@@ -44,6 +44,10 @@ extension HomeVC {
             return cell
         case 1:
             let cell:AdsenseCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            return cell
+        case 2:
+            let cell:TagsCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.datasource = self.model.getAllTags as AnyObject
             return cell
         default: break
             

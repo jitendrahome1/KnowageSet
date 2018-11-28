@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TagsCell" rowHeight="137" id="ZzI-NM-SZU" customClass="TagsCell" customModule="KnowageSet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZzI-NM-SZU" id="gIs-CU-7SD">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4X-c3-b47" customClass="TTGTextTagCollectionView">
+                        <rect key="frame" x="8" y="8" width="359" height="128.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="c4X-c3-b47" secondAttribute="trailing" constant="8" id="8Dg-fH-LyV"/>
+                    <constraint firstAttribute="bottom" secondItem="c4X-c3-b47" secondAttribute="bottom" id="Aa5-w2-ATV"/>
+                    <constraint firstItem="c4X-c3-b47" firstAttribute="leading" secondItem="gIs-CU-7SD" secondAttribute="leading" constant="8" id="ZER-Wd-rEH"/>
+                    <constraint firstItem="c4X-c3-b47" firstAttribute="top" secondItem="gIs-CU-7SD" secondAttribute="top" constant="8" id="xFa-9V-qv3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="tagView" destination="c4X-c3-b47" id="bHG-LP-9It"/>
+            </connections>
+            <point key="canvasLocation" x="-15.199999999999999" y="66.11694152923539"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -10,4 +10,5 @@ target 'KnowageSet' do
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'RSLoadingView'
+pod 'TTGTagCollectionView'
 end
