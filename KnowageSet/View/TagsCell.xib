@@ -19,16 +19,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4X-c3-b47" customClass="TTGTextTagCollectionView">
-                        <rect key="frame" x="8" y="8" width="359" height="128.5"/>
+                        <rect key="frame" x="16" y="0.0" width="343" height="128.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="c4X-c3-b47" secondAttribute="trailing" constant="8" id="8Dg-fH-LyV"/>
-                    <constraint firstAttribute="bottom" secondItem="c4X-c3-b47" secondAttribute="bottom" id="Aa5-w2-ATV"/>
-                    <constraint firstItem="c4X-c3-b47" firstAttribute="leading" secondItem="gIs-CU-7SD" secondAttribute="leading" constant="8" id="ZER-Wd-rEH"/>
-                    <constraint firstItem="c4X-c3-b47" firstAttribute="top" secondItem="gIs-CU-7SD" secondAttribute="top" constant="8" id="xFa-9V-qv3"/>
+                    <constraint firstAttribute="trailing" secondItem="c4X-c3-b47" secondAttribute="trailing" constant="16" id="8Dg-fH-LyV"/>
+                    <constraint firstAttribute="bottom" secondItem="c4X-c3-b47" secondAttribute="bottom" constant="8" id="Aa5-w2-ATV"/>
+                    <constraint firstItem="c4X-c3-b47" firstAttribute="leading" secondItem="gIs-CU-7SD" secondAttribute="leading" constant="16" id="ZER-Wd-rEH"/>
+                    <constraint firstItem="c4X-c3-b47" firstAttribute="top" secondItem="gIs-CU-7SD" secondAttribute="top" id="xFa-9V-qv3"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

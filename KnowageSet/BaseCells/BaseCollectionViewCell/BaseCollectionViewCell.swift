@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseCollectionViewCell: UICollectionViewCell,ReusableView, NibLoadableView {
+class BaseCollectionViewCell: UICollectionViewCell,ReusableView , NibLoadableView{
  
     override func awakeFromNib() {
         self.backgroundColor = .clear

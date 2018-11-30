@@ -21,16 +21,16 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ET-bG-Gm1">
                         <rect key="frame" x="0.0" y="0.0" width="341" height="86.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kte-LB-81j">
-                                <rect key="frame" x="8" y="8" width="325" height="78.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner2.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="kte-LB-81j">
+                                <rect key="frame" x="20" y="8" width="301" height="78.5"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.1450980392" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kte-LB-81j" firstAttribute="top" secondItem="9ET-bG-Gm1" secondAttribute="top" constant="8" id="5D0-PJ-4Wg"/>
-                            <constraint firstAttribute="trailing" secondItem="kte-LB-81j" secondAttribute="trailing" constant="8" id="KYY-zV-SR4"/>
-                            <constraint firstItem="kte-LB-81j" firstAttribute="leading" secondItem="9ET-bG-Gm1" secondAttribute="leading" constant="8" id="YkD-Oh-FDu"/>
+                            <constraint firstAttribute="trailing" secondItem="kte-LB-81j" secondAttribute="trailing" constant="20" id="KYY-zV-SR4"/>
+                            <constraint firstItem="kte-LB-81j" firstAttribute="leading" secondItem="9ET-bG-Gm1" secondAttribute="leading" constant="20" id="YkD-Oh-FDu"/>
                             <constraint firstAttribute="bottom" secondItem="kte-LB-81j" secondAttribute="bottom" id="qsM-3e-7k9"/>
                         </constraints>
                     </view>
@@ -51,4 +51,7 @@
             <point key="canvasLocation" x="-52" y="77.811094452773617"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="banner2.jpeg" width="625" height="340"/>
+    </resources>
 </document>

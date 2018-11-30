@@ -17,6 +17,7 @@ class TagsCell: BaseTableViewCell {
           tagView.scrollDirection = .horizontal
           tagView.alignment = .fillByExpandingWidth
           tagView.numberOfLines = 2
+            self.backgroundColor = .clear
         
     }
     

@@ -25,6 +25,8 @@ class HomeVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
         self.tblHome.register(SliderCell.self)
         self.tblHome.register(AdsenseCell.self)
         self.tblHome.register(TagsCell.self)
+        self.tblHome.registerClass(CourceCell.self)
+       
     }
 }
 // MARK:- Table view Delegate and Datascource
@@ -49,6 +51,12 @@ extension HomeVC {
             let cell:TagsCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cell.datasource = self.model.getAllTags as AnyObject
             return cell
+        case 3:
+            let cell:CourceCell =  tableView.dequeueReusableCell(forIndexPath: indexPath)
+            return cell
+        case 4:
+            let cell:CourceCell =  tableView.dequeueReusableCell(forIndexPath: indexPath)
+            return cell
         default: break
             
         }
@@ -61,7 +69,8 @@ extension HomeVC {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         if let headerView   =   HomeSectionHeader.instantiateFromNib() {
-            return headerView
+                headerView.lblHeaderTitle.text = model.sectionTitle(index: section)
+                return headerView
         }
         return nil
         

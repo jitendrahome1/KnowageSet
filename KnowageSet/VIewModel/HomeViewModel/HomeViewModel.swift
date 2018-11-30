@@ -14,10 +14,11 @@ class HomeViewModel {
     private let arrTagsItems: [String] = ["AutoLayout", "dynamically", "calculates", "the", "size", "and", "position",
                                            "of", "all", "the", "views", "in", "your", "view", "hierarchy", "based",
                                             "on", "constraints", "placed", "on", "those", "views"]
+    private let headerTitle:[String] = ["","","Categories","Top courses in Design","Top courses in Business"]
  
     var numberOfSection: Int {
         get {
-            return 3
+            return 5
         }
     }
     func heightForHeader(section:Int)->Int {
@@ -31,7 +32,7 @@ class HomeViewModel {
 
     func numberOfRowInSection(section:Int)->Int {
         switch section {
-        case 0,1,2:
+        case 0,1,2,3,4:
             return 1
         default:
             return 0
@@ -43,9 +44,11 @@ class HomeViewModel {
         case 0:
             return 202
         case 1,2:
-            return 100
-        
-            
+            return 90
+        case 3:
+            return 145
+        case 4:
+            return 180
         default:
             return 0
         }
@@ -55,6 +58,10 @@ class HomeViewModel {
         get {
             return self.arrTagsItems
         }
+    }
+    func sectionTitle(index:Int)-> String {
+        return self.headerTitle[index]
+        
     }
     
 }
