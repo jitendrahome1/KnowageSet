@@ -26,7 +26,7 @@ class HomeVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
         self.tblHome.register(AdsenseCell.self)
         self.tblHome.register(TagsCell.self)
         self.tblHome.registerClass(CourceCell.self)
-       
+      
     }
 }
 // MARK:- Table view Delegate and Datascource
@@ -56,7 +56,29 @@ extension HomeVC {
             return cell
         case 4:
             let cell:CourceCell =  tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.cellSize(width: screenWidth, height: CGFloat(model.heightForRow(section: indexPath.section)), rowEach: 2)
+          
             return cell
+        case 5:
+           
+            let cell:CourceCell =  tableView.dequeueReusableCell(forIndexPath: indexPath)
+
+
+           return cell
+           
+        case 6:
+            
+            let cell:CourceCell =  tableView.dequeueReusableCell(forIndexPath: indexPath)
+             cell.cellSize(width: screenWidth, height: CGFloat(model.heightForRow(section: indexPath.section)), rowEach: 2)
+         
+            return cell
+//        case 7:
+//            
+//            let cell:CourceCell =  tableView.dequeueReusableCell(forIndexPath: indexPath)
+//           
+//            
+//            return cell
+     
         default: break
             
         }
@@ -76,7 +98,7 @@ extension HomeVC {
         
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
+
         return CGFloat(model.heightForHeader(section: section))
     }
     

@@ -8,28 +8,33 @@
 
 import UIKit
 
+
 class CourceCell: BaseTableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    
+    private var cellSize:CellSize!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-      
+        
         self.contentView.backgroundColor = .clear
         // Initialization code
         self.configurationBGView()
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        self.cellSize =  CellSize()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-          self.backgroundColor = .clear
-            self.selectionStyle = .none
-            self.configurationBGView()
+        
+        self.backgroundColor = .clear
+        self.selectionStyle = .none
+        self.configurationBGView()
+
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     
     lazy var viewBG:UIView =  {
         let view =  UIView()
@@ -38,17 +43,8 @@ class CourceCell: BaseTableViewCell, UICollectionViewDelegate, UICollectionViewD
         return view
     }()
     
-    var cellWidth:CGFloat {
-       
-        get{
-            return (viewBG.bounds.size.width - 16) / 3
-        }
-    }
-    var cellHeight:CGFloat {
-        
-        get{
-            return self.frame.size.height - 16
-        }
+    func cellSize(width:CGFloat, height:CGFloat, rowEach:Int) {
+        self.cellSize.setCellSize(width: width, height: height, rowEach:rowEach)
     }
     
     lazy var aCollectionView:UICollectionView =  {
@@ -64,9 +60,11 @@ class CourceCell: BaseTableViewCell, UICollectionViewDelegate, UICollectionViewD
         collectionView.dataSource = self
         return collectionView
     }()
-    
+  
     private func registerCustomCell() {
-            self.aCollectionView.register(CourceCollectionviewCell.self)
+        aCollectionView.setContentOffset(aCollectionView.contentOffset, animated:false)
+        aCollectionView.reloadData()
+        self.aCollectionView.register(CourceCollectionviewCell.self)
         
     }
     private func configurationBGView() {
@@ -77,9 +75,11 @@ class CourceCell: BaseTableViewCell, UICollectionViewDelegate, UICollectionViewD
         viewBG.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         viewBG.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         self.configurationCollectionView()
+        
     }
     private func configurationCollectionView() {
         self.viewBG.addSubview(aCollectionView)
+        
         aCollectionView.translatesAutoresizingMaskIntoConstraints = false
         aCollectionView.topAnchor.constraint(equalTo: self.viewBG.topAnchor).isActive = true
         aCollectionView.bottomAnchor.constraint(equalTo: self.viewBG.bottomAnchor).isActive = true
@@ -87,18 +87,29 @@ class CourceCell: BaseTableViewCell, UICollectionViewDelegate, UICollectionViewD
         aCollectionView.trailingAnchor.constraint(equalTo: self.viewBG.trailingAnchor).isActive = true
         self.registerCustomCell()
     }
+    
+    func updateLayout() {
+        
+      
+        let layout = aCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        
+        layout!.itemSize = CGSize(width: cellSize.cellWidth, height:cellSize.cellHeight)
+        layout!.invalidateLayout()
+            
+        
+    }
 }
 
 // MARK: - CollectionView Delegate and DataScource.
 
 extension CourceCell {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CourceCollectionviewCell =  collectionView.dequeueReusableCell(for: indexPath)
-
+ 
         return cell
     }
     func collectionView(_ collectionView: UICollectionView,
@@ -113,15 +124,22 @@ extension CourceCell {
         return 6.0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth, height: cellHeight)
+
+     
+       return CGSize(width: cellSize.cellWidth, height:cellSize.cellHeight)
     }
     
-  
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         
     }
     
+    
+    
 }
+
+
+
 
 
